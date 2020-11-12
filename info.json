@@ -1,0 +1,14 @@
+{
+    "name": "chat.io",
+    "version": "1.0.0",
+    "developer": "Salvatore",
+    "rooms": [
+        "generale",
+        "programmazione",
+        "fantascienza",
+        "gaming",
+        "informatica",
+        "lavoro",
+        "politica"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "Live Chat",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Frex",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.5",
+    "express": "^4.16.4",
+    "http": "0.0.1-security",
+    "nodemon": "^2.0.5",
+    "path": "^0.12.7",
+    "socket.io": "^2.3.0"
+  }
+}

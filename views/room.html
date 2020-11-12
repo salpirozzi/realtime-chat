@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Room</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
+        <link href="./views/style.css" rel="stylesheet">
+        <script src="./views/chat.js" username="<%= username %>" room="<%= room %>" id="socket.id"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <button type="button" class="back back-home" id="exit">Torna alla home</button>
+        <div class="logo">
+            <img src="./views/live-chat.png"/>
+            <span><%= version %> - <%= developer %></span>
+        </div>
+        <div class="container center">
+            <div class="item">
+                <strong><%= username %></strong>, sei collegato in <strong><%= room %></strong>!<br>
+                Attualmente ci sono <span id="count_users"><%= number %></span> utenti collegati alla tua stanza.
+            </div>
+        </div>
+        <div class="chatbox" id="chat">
+            <ul id="messages"></ul>
+        </div>
+        <form id="send" method="POST">
+            <input type="text" placeholder="Digita un messaggio da inviare..." id="message" class="mess_input" autocomplete="off" maxlength="100"/>
+            <button type="submit" class="btn-link" id="message_send"><i style="font-size: 21px" class="fa send">&#xf1d9;</i></button>
+        </form> 
+    </body>
+</html>

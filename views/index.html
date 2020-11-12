@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <link href="./views/style.css" rel="stylesheet">
+        <script src="./views/carousel.js"></script>
+    </head>
+
+    <body>
+        <div class="logo">
+            <img src="./views/live-chat.png"/>
+            <span><%= version %> - <%= developer %></span>
+        </div>
+        <div id="page-app" class="container">
+            <div id="home" class="container center">
+                <div class="item">
+                    <strong>Benvenuto!</strong>
+                    Ci sono <span id="user-connected"><%= number %></span> utenti connessi.
+                </div>
+                <div class="item">
+                    <span>Festeggiamo dieci anni di attività. Ragion per cui abbiamo deciso di<br>
+                        farvi un regalo speciale: <strong>una live chat</strong> tutta per voi!
+                    </span>
+                </div>
+                <div class="item">
+                    <button type="button" class="next" onclick="next()">Accedi alla chat</button>
+                </div>
+            </div>
+            <div id="room" class="container center">
+                <div class="item">
+                    <form action="/room" method="POST" id="login">
+                        <div class="item">
+                            <label for="username">Digita il tuo nome utente. (Default: <strong>User</strong>)</label>
+                            <input type="text" placeholder="Digita il tuo nome..." id="username" name="username" autocomplete="off"/>
+                        </div>
+                        <div class="item">
+                            <label for="room_id">Scegli la stanza in cui entrare (Default: <strong>generale</strong>). <br />
+                                Digita in <strong>Stanza personalizzata</strong> per crearne una privata!</label>
+                            <select name="room_id" id="room_id">
+                                <% rooms.forEach(function(r_name) { %>
+                                    <option value="<%- r_name %>"><%- r_name %></option>
+                                <% }); %>
+                            </select>
+                            <input type="text" placeholder="Stanza personalizzata" id="custom_room" name="custom_room" autocomplete="off"/>
+                        </div>  
+                        <div class="item">
+                            <button type="button" class="back" onclick="previous()">Indietro</button>
+                            <button class="next" type="submit">Entra in stanza</button>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

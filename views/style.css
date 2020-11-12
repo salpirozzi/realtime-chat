@@ -1,0 +1,203 @@
+/* https://stackoverflow.com/questions/7558642/left50-element-not-appearing-in-middle-of-page */
+
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,500,700");
+
+* {
+    box-sizing: border-box;
+    font-family: Nunito, sans-serif;
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+    background-color: #D2D9E0;
+}
+
+.logo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+}
+
+.logo > img {
+    width: 150px;
+}
+
+.logo > span {
+    font-weight: bold;
+    text-align: left;
+    font-size: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2% auto;
+    width: 100vw;
+    border-radius: 10px;
+}
+
+.container.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    border-radius: 10px;
+    background-color: #D2D9E0;
+    color: black;
+    text-align: center;
+    margin: 3px;
+}
+
+.item {
+    padding: 5px;
+}
+
+.chatbox {
+    margin: 2% auto;
+    width: 90vw;
+    border-radius: 10px;
+    border: 3px solid #4a437f;
+    overflow-y: auto;
+    height: 40vh;
+    background: white;
+}
+
+span#count_users {
+    font-weight: bold;
+}
+
+.right {
+    text-align: right;
+    list-style-position: inside;
+    margin-right: 7px;
+}
+
+.left {
+    text-align: left;
+    list-style-position: inside;
+    margin-left: 7px;
+}
+
+.message {
+    padding: 2px;
+}
+
+.mess_input {
+    display: inline-block;
+    margin-left: 5vw;
+    width: 40vw;
+    padding: 10px;
+    padding-bottom: 6px;
+}
+
+.mess_input::placeholder {
+    font-weight: normal;
+    font-size: 13px;
+    padding: 0px;
+}
+
+.send {
+    padding: 4px;
+}
+
+.btn-link {
+    border: 1px solid #4a437f;
+    border-radius: 5px;
+    background: white;
+}
+
+.btn-link:hover:enabled {
+    background: #C0C0C0;
+}
+
+.btn-link:disabled {
+    background: #D2D9E0;
+}
+
+.next {
+    padding: 10px;
+    background-color:#4a437f;
+    border: 1px solid #4a437f;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.back {
+    padding: 10px;
+    background-color:#7a0505;
+    border: 1px solid #7a0505;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;  
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.back-home {
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 1%;
+}
+
+span#user-connected {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 7px;
+    border: 1px solid #4a437f;
+    border-radius: 5px;
+    color: #4a437f;
+    display: block;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #4a437f;
+}
+
+.next:focus, .next:hover, .back:focus, .back:hover {
+    border: 1px solid black;
+}
+
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    line-height: 8px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
